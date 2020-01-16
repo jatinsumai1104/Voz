@@ -34,22 +34,15 @@ class Database {
 
 
     public function insert($table, $data){
-        // echo "hello";
         $keys = array_keys($data);
-        // print_r($keys);
         $fields = "`" . implode("`, `", $keys). "`";
 
         $placeholders = ":" . implode(", :", $keys);
-        //echo $fields;
-        // echo "<br>";
-        //echo $placeholders;
 
         $sql = "INSERT INTO {$table} ({$fields}) VALUES({$placeholders})";
-        echo $sql;
         $this->stmt = $this->pdo->prepare($sql);
 
         $this->stmt->execute($data);
-        echo "success";
         return $this->pdo->lastInsertId();
     }
 
@@ -74,7 +67,6 @@ class Database {
         $columnNameString = $this->prepareColumnString($fields);
         
         $sql = "SELECT {$columnNameString} from {$table} where {$condition}";
-        // echo $sql;
         $this->stmt = $this->pdo->prepare($sql);
         $this->stmt->execute();
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -82,7 +74,6 @@ class Database {
 
     public function delete($table,$condition="1"){
         $sql = "update {$table} set deleted = 1 where $condition";
-        //echo $sql;
 		$this->stmt = $this->pdo->prepare($sql);
         $this->stmt->execute();
     }
@@ -103,10 +94,8 @@ class Database {
 
     public function exists($table,$data){
         $field = array_keys($data)[0];
-        // echo "hello";
         $result = $this->readData($table,["*"], "{$field}='{$data[$field]}'");
         if(count($result)>0){
-            // echo "count>0";
             return true;
         }else{
             return false;
