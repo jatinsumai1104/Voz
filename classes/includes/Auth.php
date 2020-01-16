@@ -55,16 +55,10 @@ class Auth {
         where users.id = tokens.user_id and tokens.token = '$token'");
     }
     
-    protected function setAuthSession($id){
-		$_SESSION[$this->session] = $id;
-    }
-    
-    public function check(){
-		return isset($_SESSION[$this->session]);
-    }
-    
+
+    //to be updated
     public function signout(){
-		unset($_SESSION[$this->session]);
+		  unset($_SESSION[$this->session]);
     }
     
     public function register($input){
