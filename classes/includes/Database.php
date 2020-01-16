@@ -34,7 +34,7 @@ class Database {
 
 
     public function insert($table, $data){
-        echo "hello";
+        // echo "hello";
         $keys = array_keys($data);
         // print_r($keys);
         $fields = "`" . implode("`, `", $keys). "`";
@@ -96,7 +96,6 @@ class Database {
 			$i++;
 		}
 		$sql = "update {$table} set {$columnValueSet}, updated_at = now() where {$condition} ";
-        echo $sql;
         $this->stmt = $this->pdo->prepare($sql);
         $this->stmt->execute();
         return $this;
