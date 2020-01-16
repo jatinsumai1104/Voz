@@ -1,0 +1,11 @@
+Pages for voz
+- login and register of doctor
+- register of patient by doctor
+- login and register of patient
+(all signup pages with mail confirmation)
+- data table of all patients for doctor
+- selection of patient with same name through voice
+- view complete case study of  patient
+- download pdf of case study
+- making appointments by patient
+- pusher notification

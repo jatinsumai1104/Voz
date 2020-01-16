@@ -1,0 +1,13 @@
+.btn-voice-input {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-image: linear-gradient(to right, #649bff, #0070fa, #649bff);
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  z-index: 100000;
+  font-size: 20px;
+}
