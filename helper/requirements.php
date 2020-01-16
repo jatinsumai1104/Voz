@@ -19,3 +19,4 @@ require_once "{$app}/../classes/includes/Session.php";
 
 // Project Related Classes
 require_once "{$app}/../classes/controllers/web/Doctor.php";
+require_once "{$app}/../classes/controllers/web/Patient.php";
