@@ -96,7 +96,6 @@ class Database {
 			$i++;
 		}
 		$sql = "update {$table} set {$columnValueSet}, updated_at = now() where {$condition} ";
-        echo $sql;
         $this->stmt = $this->pdo->prepare($sql);
         $this->stmt->execute();
         return $this;
