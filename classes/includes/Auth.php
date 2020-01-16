@@ -109,6 +109,7 @@ class Auth {
 
       $email = $input['email'];
       $password = $input['password'];
+      $user_type = $input['user_type'];
 
       // $this->di->get("Database")->beginTransaction();
 
@@ -124,6 +125,7 @@ class Auth {
           // echo "verified";
           $id = $this->di->get("Database")->readData("users",["id"],"email='{$email}'");
           Session::setSession("user_id",$id[0]['id']);
+          Session::setSession("user_type",$user_type);
           Session::setSession("login","success");
           //Util::redirect("index");
           echo "Hello Login hua bro";
