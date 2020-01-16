@@ -34,7 +34,7 @@ class Database {
 
 
     public function insert($table, $data){
-        echo "hello";
+        // echo "hello";
         $keys = array_keys($data);
         // print_r($keys);
         $fields = "`" . implode("`, `", $keys). "`";
