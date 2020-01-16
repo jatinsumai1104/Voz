@@ -26,7 +26,6 @@ class Doctor{
 
     public function register($data){
         return $this->query->addData("patients",$data);
-
     }
 }
 ?>
