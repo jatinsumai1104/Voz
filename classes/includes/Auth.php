@@ -6,7 +6,7 @@ class Auth {
     protected $di;
     
 
-    protected $table = 'employees';
+    protected $table = 'users';
 
     public function __construct(DependencyInjector $di){
         $this->di = $di;
@@ -103,4 +103,38 @@ class Auth {
       }
       Session::setSession("sign_up", "success");
     }
+
+    public function login($input){
+      
+
+      $email = $input['email'];
+      $password = $input['password'];
+      $user_type = $input['user_type'];
+
+      // $this->di->get("Database")->beginTransaction();
+
+      if(!$this->di->get("Database")->exists("users",["email"=>$email])){
+        //Session::setSession("login", "failed");
+        //Util::redirect("login");
+        return;
+      }else{
+        $hashed_password =$this->di->get("Database")->readData("users",["password"],"email='{$email}'");
+        $db_password = $hashed_password[0]['password'];
+        
+        if($db_password == $password){
+          // echo "verified";
+          $id = $this->di->get("Database")->readData("users",["id"],"email='{$email}'");
+          Session::setSession("user_id",$id[0]['id']);
+          Session::setSession("user_type",$user_type);
+          Session::setSession("login","success");
+          //Util::redirect("index");
+          echo "Hello Login hua bro";
+        }else{
+          Session::setSession("login","failed");
+          //Util::redirect("login");
+          return;
+        }
+
+      }
+}
 }

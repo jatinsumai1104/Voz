@@ -32,7 +32,7 @@ require_once('../../helper/constants.php');
 					<a href="<?php echo BASEURL;?>"><img src="<?php echo BASEASSETS;?>img/service.png" alt="IMG" ></a>
 				</div>
 
-				<form class="login100-form validate-form" method='POST' action="<?php echo BASEURL?>helper/login-helper.php">
+				<form class="login100-form validate-form" method='POST' action="<?php echo BASEURL?>helper/routing.php">
 					<span class="login100-form-title">
 						Member Login
 					</span>
@@ -53,7 +53,7 @@ require_once('../../helper/constants.php');
 						</span>
 					</div>
 					<div>
-						<select class="custom-select input100" id="inputGroupSelect01" name="type[]">
+						<select class="custom-select input100" id="inputGroupSelect01" name="user_type[]">
 							<option selected disabled>Choose...</option>
 							<option value="patient">Patient</option>
 							<option value="doctor">Doctor</option>

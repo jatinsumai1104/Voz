@@ -12,5 +12,6 @@ $di->set("Auth", new Auth($di));
 $di->set("UserHelper", new UserHelper($di));
 // $di->set("Mail", MailConfigHelper::getMailer());
 $di->set("Validator", new Validator($di));
+
 $di->set("Doctor",new Doctor($di));
 // $tokenHandler->build();
