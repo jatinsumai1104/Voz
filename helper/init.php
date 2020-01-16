@@ -12,8 +12,5 @@ $di->set("Auth", new Auth($di));
 $di->set("UserHelper", new UserHelper($di));
 // $di->set("Mail", MailConfigHelper::getMailer());
 $di->set("Validator", new Validator($di));
-$di->set("Product", new Product($di));
-$di->set("Supplier", new Supplier($di));
-$di->set("Category", new Category($di));
 
 // $tokenHandler->build();
