@@ -14,5 +14,9 @@ $di->set("UserHelper", new UserHelper($di));
 $di->set("Validator", new Validator($di));
 
 $di->set("Doctor",new Doctor($di));
+<<<<<<< HEAD
 $di->set("Patient",new Patient($di));
+=======
+
+>>>>>>> dfca3e3be62d2550df780e2ad6881c1d6c9aa1dd
 // $tokenHandler->build();
