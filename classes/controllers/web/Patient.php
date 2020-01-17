@@ -8,6 +8,12 @@ Class Patient{
     }
 
 
+    public function getPreviousRecords($patient_id){
+      $query = "SELECT * FROM prescription,cases WHERE cases.patient_id = $patient_id AND prescription.case_id = cases.id";
+      $res = $di->get("Database")->rawQuery($query);
+      return $res;
+    }
+
     public function registerHalfPatient($data){
       try{
         $dataURL = $data["image"];
@@ -26,7 +32,6 @@ Class Patient{
         $di->get("Database")->rollback();
         echo $e;
       }
-      
     }
 }
 ?>

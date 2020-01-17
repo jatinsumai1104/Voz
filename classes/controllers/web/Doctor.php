@@ -2,6 +2,7 @@
 
 Class Doctor{
     protected $di;
+    protected $table = "doctor";
     public function __construct($di){
         $this->di = $di;
     }
