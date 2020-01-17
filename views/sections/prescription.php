@@ -8,7 +8,7 @@ require_once('../includes/header-bp.php');
 
 ?>
     <!-- about us part start-->
-    <!-- <section class="about_us single_about_padding" style="margin-bottom: 60px"> -->
+    <section class="about_us single_about_padding" style="margin-bottom: 60px">
         <div class="container-fluid">
             <div id="print_prescription">
                 <table class="table table-bordered">
@@ -34,7 +34,7 @@ require_once('../includes/header-bp.php');
                         </tr>             
                 </table>
             </div>
-    <!-- </section> -->
+    </section>
     <!-- about us part end-->
 
 <?php 
