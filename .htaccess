@@ -9,4 +9,4 @@ RewriteRule ^image_through_camera$ views/sections/disease_identify_camera.php
 RewriteRule ^image_through_local$ views/sections/disease_identify_local.php
 RewriteRule ^list_patients$ views/sections/list_patients.php
 RewriteRule ^prescription$ views/sections/prescription.php
-RewriteRule ^prescription_history/([0-9]+)$ views/sections/prescription_history.php?patient_id=$id
+RewriteRule ^prescription_history/([0-9]+)$ views/sections/prescription_history.php?patient_id=$1

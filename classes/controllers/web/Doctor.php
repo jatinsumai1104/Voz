@@ -13,6 +13,13 @@ Class Doctor{
         return $res;
     }
 
+    public function getDoctorData($doctor_id){
+        $res = $this->di->get("Database")->readData($this->table, ["*"], "id=".$doctor_id)[0];
+        $res = $this->di->get("Database")->readData("users", ["*"], "id=".$res["user_id"])[0];
+        $res["doctor_id"] = $doctor_id;
+        return $res;
+    }
+
     public function getPatientsList($doctor_id, $data=[]){
 
         $str = "";
