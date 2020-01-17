@@ -3,8 +3,8 @@ Pages for voz
 - register of patient by doctor (done)
 - login and register of patient (done)
 (all sign_up pages with mail confirmation)
-- data table of all patients for doctor (backEnd done)
-- selection of patient with same name through voice
+- data table of all patients for doctor (done)
+- selection of patient with same name through voice (done)
 - view complete case study of patient (backEnd done)
 - download pdf of case study
 - making appointments by patient

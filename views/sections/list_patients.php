@@ -1,7 +1,7 @@
 <?php 
 
 require_once(__DIR__.'/../../helper/init.php');
-$_SESSION['current_page'] = "About Us";
+$_SESSION['current_page'] = "Patients List";
 require_once('../includes/header.php');
 require_once('../includes/navigation.php');
 require_once('../includes/header-bp.php');
@@ -14,7 +14,7 @@ require_once('../includes/header-bp.php');
                 <div class="col-md-12 col-lg-12">
                 <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-cog"></i>  Manage Product</h6>
+                <h2 class="m-0 font-weight-bold text-primary"><i class="fa fa-wheelchair"></i>  Patient's List</h2>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -28,23 +28,31 @@ require_once('../includes/header-bp.php');
                                 <th>Email</th>
                                 <th>Date of Birth</th>
                                 <th>Last Prescription Date</th>
+                                <th>View</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                                $patients = $di->get("Doctor")->getPatientsList(Session::getSession("user_id"));
+                                $data = [];
+                                if(Session::getSession("voice_text") != null){
+                                    $data["voice_text"] = Session::getSession("voice_text");
+                                }
+                                $patients = $di->get("Doctor")->getPatientsList(Session::getSession("user_id"), $data);
                                 foreach($patients as $patient){
                             ?>
                             <tr>
-                                <td><img src="<?php echo $patient['image']?>" alt=""></td>
+                                <td><img src="<?php echo 'data:image/jpeg;base64,'.base64_encode( $patient['image'] );?>" height="50px"/></td>
                                 <td><?php echo $patient['name']?></td>
                                 <td><?php echo $patient['full_address']?></td>
                                 <td><?php echo $patient['gender']?></td>
                                 <td><?php echo $patient['email']?></td>
                                 <td><?php echo $patient['dob']?></td>
                                 <td><?php echo $patient['case_date']?></td>
+                                <td><a href="<?php echo BASEURL;?>/prescription_history/<?php echo $patient['patient_id']?>" class="btn_2">View</a> </td>
                             </tr>
-                                <?php }?>
+                            
+                            <?php }?>
+                                
                         </tbody>
                     </table>
                 </div>
@@ -61,3 +69,4 @@ require_once('../includes/scripts.php');
     var table = $("#dataTable");
     table.DataTable();
 </script>
+

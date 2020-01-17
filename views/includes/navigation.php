@@ -20,16 +20,8 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo BASEURL;?>register_patient">Register Patient</a>
                                 </li>
-
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Check Disease
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="<?php echo BASEURL;?>image_through_local">Upload Image (through local storage)</a>
-                                        <a class="dropdown-item" href="<?php echo BASEURL;?>image_through_camera">Upload Image (through camera)</a>
-                                    </div>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo BASEURL;?>list_patients">List Patients</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"

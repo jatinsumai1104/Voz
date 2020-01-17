@@ -3,7 +3,14 @@
 require_once ("init.php");
 
 if(isset($_POST["voice_text"])){
-    $di->get("Patient")->getPatientFromVoice($_POST);
+    var_dump($_POST);
+    $res = $di->get("Patient")->getPatientFromVoice($_POST);
+    if(count($res) > 1){
+        SESSION::setSession("voice_text", $_POST["voice_text"]);
+        Util::redirect("list_patients");
+    }else{
+        Util::redirect("prescription_history/{$res[0]['id']}");
+    }
 }
 
 if(isset($_POST["patient_register_through_doctor"])){
