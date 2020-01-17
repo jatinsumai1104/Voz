@@ -8,7 +8,7 @@ require_once('../includes/header-bp.php');
 
 ?>
     <!-- about us part start-->
-    <!-- <section class="about_us single_about_padding" style="margin-bottom: 60px"> -->
+    <section class="about_us single_about_padding" style="margin-bottom: 60px">
         <div class="container-fluid">
             <div id="HTMLtoPDF">
                 <table class="table table-bordered">
@@ -46,9 +46,13 @@ require_once('../includes/header-bp.php');
                         </tr>             
                 </table>
             </div>
+<<<<<<< HEAD
+    </section>
+=======
         </div>
         <a href="#" onclick="HTMLtoPDF()">Download</a>
     <!-- </section> -->
+>>>>>>> aca9e4bea0b32f54e97378b4ad90869228d32f58
     <!-- about us part end-->
 
 <?php 
