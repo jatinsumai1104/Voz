@@ -5,7 +5,7 @@ Pages for voz
 (all sign_up pages with mail confirmation)
 - data table of all patients for doctor (done)
 - selection of patient with same name through voice (done)
-- view complete case study of patient (backEnd done)
+- view complete case study of patient (done)
 - download pdf of case study
 - making appointments by patient
 - pusher notification

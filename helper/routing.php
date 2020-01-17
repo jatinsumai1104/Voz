@@ -8,8 +8,10 @@ if(isset($_POST["voice_text"])){
     if(count($res) > 1){
         SESSION::setSession("voice_text", $_POST["voice_text"]);
         Util::redirect("list_patients");
-    }else{
+    }else if(count($res) == 1){
         Util::redirect("prescription_history/{$res[0]['id']}");
+    }else{
+        Util::redirect("register_patient");
     }
 }
 

@@ -29,7 +29,6 @@ Class Patient{
       
     }
 
-
     public function getPatientFromVoice($data){
       $data = explode(" ", $data["voice_text"]);
       $str = "";
@@ -44,6 +43,14 @@ Class Patient{
     public function getPreviousRecords($patient_id){
       $query = "SELECT * FROM prescription,cases WHERE cases.patient_id = $patient_id AND prescription.case_id = cases.id";
       $res = $this->di->get("Database")->rawQuery($query);
+      return $res;
+    }
+
+    public function getPatientData($doctor_id, $patient_id){
+      
+      $query = "SELECT DISTINCT u.name, u.gender, u.email, FLOOR(DATEDIFF(CURDATE(), dob)/365.25) as age, u.image, CURDATE() as today, pc.* FROM patient as p INNER JOIN users as u ON p.user_id = u.id INNER JOIN doctor_patient as dp ON dp.doctor_id = {$doctor_id} INNER JOIN cases as c ON c.patient_id = p.id INNER JOIN prescription as pc ON pc.case_id = c.id WHERE p.id = {$patient_id}";
+      $res = $this->di->get("Database")->rawQuery($query);
+      $res["doctor_details"] = $this->di->get("Doctor")->getDoctorData($doctor_id);
       return $res;
     }
 }
