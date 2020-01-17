@@ -46,13 +46,10 @@ require_once('../includes/header-bp.php');
                         </tr>             
                 </table>
             </div>
-<<<<<<< HEAD
-    </section>
-=======
         </div>
         <a href="#" onclick="HTMLtoPDF()">Download</a>
+        <a href="#" onclick="mailPdf()">Mail</a>
     <!-- </section> -->
->>>>>>> aca9e4bea0b32f54e97378b4ad90869228d32f58
     <!-- about us part end-->
 
 <?php 
@@ -70,6 +67,52 @@ require_once('../includes/scripts.php');
     doc.save('tp.pdf');    
 </script> -->
 <script>
+    function mailPdf(){
+        var pdf = new jsPDF('p', 'pt', 'letter');
+        source = $('#HTMLtoPDF')[0];
+        specialElementHandlers = {
+            '#bypassme': function(element, renderer){
+                return true
+            }
+        }
+        margins = {
+            top: 50,
+            left: 60,
+            width: 545
+        };
+        pdf.fromHTML(
+            source // HTML string or DOM elem ref.
+            , margins.left // x coord
+            , margins.top // y coord
+            , {
+                'width': margins.width // max width of content on PDF
+                , 'elementHandlers': specialElementHandlers
+            },
+            function (dispose) {
+            // dispose: object with X, Y of the last line add to the PDF
+            //          this allow the insertion of new lines after html
+                var pdfBase64 = pdf.output('datauristring');
+                console.log(pdfBase64);
+                $.ajax({
+                    url:"http://localhost/voz/views/sections/mail.php",
+                    method: "POST",
+                    data:{data: pdfBase64},
+                    dataType: "json",
+                    success:function(data){
+                        console.log(data);
+                    },
+                    error: function(error){
+                        console.log(error);
+                    }
+                })
+                // $.post(, 
+                // {
+                //     data: ,
+                // }, function () {}).done(function() {/*SOME CODE*/})
+            }
+        )
+
+    }
     function HTMLtoPDF(){
         var pdf = new jsPDF('p', 'pt', 'letter');
         source = $('#HTMLtoPDF')[0];
@@ -95,6 +138,7 @@ require_once('../includes/scripts.php');
             // dispose: object with X, Y of the last line add to the PDF
             //          this allow the insertion of new lines after html
                 pdf.save('html2pdf.pdf');
+                // console.log(pdf.output());
             }
         )		
     }

@@ -10,7 +10,7 @@ $di->set("ErrorHandler", new ErrorHandler($di));
 $di->set("Auth", new Auth($di));
 // $di->set("TokenHandler", new TokenHandler($database, $hash));
 $di->set("UserHelper", new UserHelper($di));
-// $di->set("Mail", MailConfigHelper::getMailer());
+$di->set("Mail", MailConfigHelper::getMailer());
 $di->set("Validator", new Validator($di));
 
 $di->set("Doctor",new Doctor($di));
