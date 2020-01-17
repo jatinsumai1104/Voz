@@ -10,7 +10,7 @@ Class Patient{
 
     public function getPreviousRecords($patient_id){
       $query = "SELECT * FROM prescription,cases WHERE cases.patient_id = $patient_id AND prescription.case_id = cases.id";
-      $res = $di->get("Database")->rawQuery($query);
+      $res = $this->di->get("Database")->rawQuery($query);
       return $res;
     }
 
@@ -29,7 +29,7 @@ Class Patient{
         $this->di->get("Database")->commit();
         echo "success";
       }catch(Exception $e){
-        $di->get("Database")->rollback();
+        $this->di->get("Database")->rollback();
         echo $e;
       }
     }
