@@ -6,7 +6,6 @@ require_once('../includes/header.php');
 require_once('../includes/navigation.php');
 require_once('../includes/header-bp.php');
 
-$res = $di->
 ?>
     <!-- about us part start-->
     <!-- <section class="about_us single_about_padding" style="margin-bottom: 60px"> -->

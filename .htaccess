@@ -8,3 +8,4 @@ RewriteRule ^contact_us$ views/sections/contact_us.php
 RewriteRule ^image_through_camera$ views/sections/disease_identify_camera.php
 RewriteRule ^image_through_local$ views/sections/disease_identify_local.php
 RewriteRule ^list_patients$ views/sections/list_patients.php
+RewriteRule ^prescription$ views/sections/prescription.php
