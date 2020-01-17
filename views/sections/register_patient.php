@@ -18,7 +18,7 @@ require_once('../includes/header-bp.php');
           <form class="form-contact contact_form" action="<?php echo BASEURL?>helper/routing.php" method="post" id="contactForm"
             novalidate="novalidate">
             <div class="form-contact contact_form">
-              <div class="row">
+              <div class="form-row">
                 <div class="col-sm-6">
                   <div class="form-group">
                     <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''"
@@ -33,9 +33,9 @@ require_once('../includes/header-bp.php');
                 </div>
                 <div class="col-sm-6">
                   <div class="form-group">
-                  <select class="form-control" id="Select" name="gender">
-                        <option value="Male" selected>Male</option>
-                        <option value="Female">Female</option>
+                    <select class="form-control" name="gender" width="100%">
+                      <option value="Male" selected>Male</option>
+                      <option value="Female">Female</option>
                     </select>
                   </div>
                 </div>

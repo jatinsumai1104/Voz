@@ -31,8 +31,10 @@ require_once(__DIR__.'/../../helper/constants.php');
     <link rel="stylesheet" href="<?php echo BASEASSETS;?>vendor/date-picker/datepicker.css">
     <!-- File Input CSS -->
     <link rel="stylesheet" href="<?php echo BASEASSETS;?>vendor/file-input/css/fileinput.min.css">
+    
     <!-- ChartJs CSS -->
     <link rel="stylesheet" href="<?php echo BASEASSETS;?>vendor/chart-js/Chart.min.js">
+    <link href="<?php echo BASEASSETS;?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- style CSS -->
     <link rel="stylesheet" href="<?php echo BASEASSETS;?>css/style.css">
     <link rel="stylesheet" href="<?php echo BASEASSETS;?>css/custom.css">

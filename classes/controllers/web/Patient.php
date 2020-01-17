@@ -23,10 +23,22 @@ Class Patient{
         $this->di->get("Database")->commit();
         echo "success";
       }catch(Exception $e){
-        $di->get("Database")->rollback();
+        $this->di->get("Database")->rollback();
         echo $e;
       }
       
+    }
+
+
+    public function getPatientFromVoice($data){
+      $data = explode(" ", $data["voice_text"]);
+      $str = "";
+      foreach($data as $name){
+        $str .= " or name Like '%".$name."%' ";
+      }
+
+      $query = "SELECT * FROM `users` WHERE ".substr($str, 3);
+      $this->di->get("Database")->rawQuery($query);
     }
 }
 ?>

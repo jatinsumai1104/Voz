@@ -3,7 +3,7 @@
 require_once ("init.php");
 
 if(isset($_POST["voice_text"])){
-    var_dump($_POST);
+    $di->get("Patient")->getPatientFromVoice($_POST);
 }
 
 if(isset($_POST["patient_register_through_doctor"])){

@@ -24,6 +24,8 @@
     <script src="<?php echo BASEASSETS;?>vendor/file-input/js/plugins/purify.min.js"></script>
     <script src="<?php echo BASEASSETS;?>vendor/file-input/js/fileinput.js"></script>
     <script src="<?php echo BASEASSETS;?>vendor/file-input/themes/fa/theme.min.js"></script>
+    <script src="<?php echo BASEASSETS;?>vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?php echo BASEASSETS;?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <!-- <script src="<?php echo BASEASSETS;?>vendor/file-input/js/locales/(lang).js"></script> -->
     <!-- Chart js -->
     <!-- <script src="<?php echo BASEASSETS;?>vendor/chart-js/Chart.min.js"></script> -->
