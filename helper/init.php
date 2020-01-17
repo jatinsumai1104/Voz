@@ -2,7 +2,7 @@
 session_start();
 
 require_once(__DIR__."/requirements.php");
-
+Session::start_session();
 $di = new DependencyInjector();
 $di->set("Database", new Database());
 $di->set("Hash", new Hash($di));
@@ -15,4 +15,5 @@ $di->set("Validator", new Validator($di));
 
 $di->set("Doctor",new Doctor($di));
 $di->set("Patient",new Patient($di));
+
 // $tokenHandler->build();

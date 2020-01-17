@@ -40,5 +40,9 @@ Class Patient{
       $query = "SELECT * FROM `users` WHERE ".substr($str, 3);
       $this->di->get("Database")->rawQuery($query);
     }
+    public function getPreviousRecords($patient_id){
+      $query = "SELECT * FROM prescription,cases WHERE cases.patient_id = $patient_id AND prescription.case_id = cases.id";
+      $res = $this->di->get("Database")->rawQuery($query);
+      return $res;
+    }
 }
-?>
